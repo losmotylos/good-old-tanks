@@ -64,7 +64,7 @@ public class NaiveBot {
 
         int angle = rand.nextInt(90) - 45;
 
-        if(diffX*angle < 0)
+        if(diffX*angle > 0)
             angle = -angle;
 
         return Command.fire(angle, power);
