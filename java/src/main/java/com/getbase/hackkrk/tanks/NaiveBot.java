@@ -64,8 +64,8 @@ public class NaiveBot {
         double diffX = ownTank.position.get(0) - nearestTank.position.get(0);
         double diffY = ownTank.position.get(1) - nearestTank.position.get(1);
 
-        double angle = 90 - Math.atan(Math.abs(diffY) / Math.abs(diffX)) * 180 / Math.PI;
-
+//        double angle = 90 - Math.atan(Math.abs(diffY) / Math.abs(diffX)) * 180 / Math.PI;
+        int angle = rand.nextInt(90) - 45;
 
         double ratio = diffX/500;
 
