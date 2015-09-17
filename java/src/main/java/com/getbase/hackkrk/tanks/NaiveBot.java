@@ -15,8 +15,8 @@ public class NaiveBot {
     }
 
     public void run() throws Exception {
-//        TanksClient client = new TanksClient("http://10.12.202.141:9999/", "master", "AttentiveBeigeDogAardvark");
-        TanksClient client = new TanksClient("http://10.12.202.144:9999/", "sandbox-5", "AttentiveBeigeDogAardvark");
+        TanksClient client = new TanksClient("http://10.12.202.141:9999/", "master", "AttentiveBeigeDogAardvark");
+//        TanksClient client = new TanksClient("http://10.12.202.144:9999/", "sandbox-5", "AttentiveBeigeDogAardvark");
 
         while (true) {
             try {
