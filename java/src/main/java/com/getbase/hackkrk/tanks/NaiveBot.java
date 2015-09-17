@@ -58,7 +58,7 @@ public class NaiveBot {
         Tank ownTank = selectOwnTank(result);
 
 
-        int power = 80;
+        int power = 100;
 
         double diffX = ownTank.position.get(0) - tank.position.get(0);
         double diffY = ownTank.position.get(1) - tank.position.get(1);
