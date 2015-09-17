@@ -15,7 +15,8 @@ public class NaiveBot {
     }
 
     public void run() throws Exception {
-        TanksClient client = new TanksClient("http://10.12.202.141:9999/", "master", "AttentiveBeigeDogAardvark");
+//        TanksClient client = new TanksClient("http://10.12.202.141:9999/", "master", "AttentiveBeigeDogAardvark");
+        TanksClient client = new TanksClient("http://10.12.202.144:9999/", "sandbox-5", "AttentiveBeigeDogAardvark");
 
         while (true) {
             try {
@@ -37,11 +38,11 @@ public class NaiveBot {
         while (!gameFinished) {
             result = client.submitMove(generateCommand(result, ++roundNumber));
             gameFinished = result.last;
-
         }
     }
 
     public Command generateCommand(TurnResult result, int i) {
+
         if(result == null)
             return gulczasaStuff();
         else {
@@ -62,7 +63,13 @@ public class NaiveBot {
         double diffX = ownTank.position.get(0) - tank.position.get(0);
         double diffY = ownTank.position.get(1) - tank.position.get(1);
 
-        int angle = rand.nextInt(90) - 45;
+        double angle = Math.atan(Math.abs(diffY) / Math.abs(diffX)) * 180 / Math.PI;
+
+
+        double ratio = diffX/500;
+
+//        int angle = Double.valueOf(45 * ratio).intValue();
+//        int angle = 45;
 
         if(diffX*angle > 0)
             angle = -angle;
@@ -74,6 +81,9 @@ public class NaiveBot {
 
     private Tank selectTank(TurnResult result) {
         for(Tank tank : result.tanks) {
+
+
+
             if(!tank.name.equals("ArrowTeam")) {
                 return tank;
             }
