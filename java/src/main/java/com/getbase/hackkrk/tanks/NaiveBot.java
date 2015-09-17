@@ -63,7 +63,7 @@ public class NaiveBot {
         double diffX = ownTank.position.get(0) - tank.position.get(0);
         double diffY = ownTank.position.get(1) - tank.position.get(1);
 
-        double angle = Math.atan(Math.abs(diffY) / Math.abs(diffX)) * 180 / Math.PI;
+        double angle = 90 - Math.atan(Math.abs(diffY) / Math.abs(diffX)) * 180 / Math.PI;
 
 
         double ratio = diffX/500;
@@ -81,7 +81,6 @@ public class NaiveBot {
 
     private Tank selectTank(TurnResult result) {
         for(Tank tank : result.tanks) {
-
 
 
             if(!tank.name.equals("ArrowTeam")) {
