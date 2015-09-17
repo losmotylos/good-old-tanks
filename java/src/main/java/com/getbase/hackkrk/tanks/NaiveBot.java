@@ -47,11 +47,11 @@ public class NaiveBot {
         if(result == null)
             return gulczasaStuff();
         else {
-//            if(i%2 == 0)
-//                return Command.move(rand.nextDouble() > 0.5 ? -100 : 100);
-//            else
-//                return killThemAll(result);
+            if(i % 3 == 0)
+                return Command.move(rand.nextDouble() > 0.5 ? -100 : 100);
+            else
                 return killThemAll(result);
+//                return killThemAll(result);
         }
     }
 
